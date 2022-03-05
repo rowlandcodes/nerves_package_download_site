@@ -19,7 +19,7 @@ resource "aws_iam_access_key" "circle_ci_access_key" {
 }
 
 resource "aws_iam_policy" "circle_ci_policy" {
-  name = var.circle_ci_policy_name
+  name   = var.circle_ci_policy_name
   policy = <<EOF
 { 
   "Version": "2012-10-17", 
@@ -36,7 +36,7 @@ EOF
 }
 
 resource "aws_iam_group_policy_attachment" "circle_ci_group_policy_attachment" {
-  group = aws_iam_group.circle_ci_group.name
+  group      = aws_iam_group.circle_ci_group.name
   policy_arn = aws_iam_policy.circle_ci_policy.arn
 }
 
