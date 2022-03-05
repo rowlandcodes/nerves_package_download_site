@@ -2,6 +2,10 @@ output "bucket_url" {
   value = "http://${module.s3_bucket.s3_bucket_url}"
 }
 
+output "region" {
+  value = var.region
+}
+
 output "bucket_uri" {
   value = "s3://${var.bucket_name}"
 }
