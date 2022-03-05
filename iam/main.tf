@@ -45,5 +45,6 @@ output "circle_ci_access_key" {
 }
 
 output "circle_ci_secret_access_key" {
-  value = aws_iam_access_key.circle_ci_access_key.secret
+  value     = aws_iam_access_key.circle_ci_access_key.secret
+  sensitive = true
 }

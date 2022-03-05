@@ -13,3 +13,7 @@ variable "circle_ci_group_name" {
 variable "circle_ci_policy_name" {
   type = string
 }
+
+variable "region" {
+  type = string
+}

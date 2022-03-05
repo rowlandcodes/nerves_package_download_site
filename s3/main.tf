@@ -4,5 +4,9 @@ resource "aws_s3_bucket" "package_download_bucket" {
 
 resource "aws_s3_bucket_acl" "package_download_bucket" {
   bucket = aws_s3_bucket.package_download_bucket.id
-  acl    = "public"
+  acl    = "public-read"
+}
+
+output "s3_bucket_url" {
+  value = aws_s3_bucket.package_download_bucket.bucket_domain_name
 }

@@ -19,3 +19,31 @@ asdf install
 ```
 
 in the project directory.
+
+Set up AWS credentials:
+```
+aws configure
+```
+
+AWS CLI will prompt you for your access key and secret access key.
+
+## Terraforming the Download Site
+
+Run the following:
+
+```
+terraform init
+terraform apply
+```
+
+The terraform will output:
+* `bucket_uri`
+* `bucket_url`
+* `circle_ci_access_key`
+
+The `circle_ci_secret_access_key` is marked as sensitive,
+So you will need to run:
+
+```
+terraform output --raw circle_ci_secret_access_key
+```
